@@ -125,14 +125,15 @@ function MensajesES ()
             'En las próximas semanas un tutor pondría ponerse en contacto contigo para realizar una entrevista corta (10 min) para conocerte y verificar los resultados del test.\n')+
             this._eliminarFormato(this._getColetilla());      
     }
- this.getMensajeEmailResultadoNoAptoPDF= function(participante,fecha_revalida)
+     this.getMensajeEmailResultadoNoAptoPDF= function(participante,fecha_revalida)
     {
     return '<r>Hola '+participante.getNombre()+'</r>,\n'+
             'Has obtenido <b>un buen resultado</b> en el test de check-in para el <r>Programa '+this._programa.getNombre()+'</r>.\n'+
             'Solo debes reforzar algunos conocimientos con tu plan formativo express.\n'+
             'Realiza estos cursos (MOOCs) antes del <b>'+this._getFechaLocale(fecha_revalida)+'</b>:\n'+
             '<ul>'+participante.getPlanDeChoque().map(function(capability){return '<li><a href="'+capability.getLinkMOOC()+'">'+capability.getNombreMOOC()+'</a></li>'}).join('')+'</ul>'+ // '#Introducción a la Estadística'+ 
-            'Además del MOOC, deberás <b>reforzar</b> tus conocimientos con el <b>libro recomendado</b> cuyo enlace y guia de lectura puedes ver en el fichero adjunto.\n'+
+            'También te adjuntamos una <b>guía del libro de estadística</b> que recomendamos y que seguro que te ayuda a potenciar tus capacidades analíticas.'+
+            'Si optas por reforzar dicho conocimiento a través de este libro, no sería necesario realizar el MOOC.\n'+ '</br>' +
             'Después <b>recibirás un nuevo test de conocimiento</b> para comprobar si has alcanzado el nivel necesario y así ser convocado al Programa.\n'+
             'En las próximas semanas un tutor pondría ponerse en contacto contigo para realizar una entrevista corta (10 min) para conocerte y verificar los resultados del test.\n'+
             this._getColetilla();
@@ -145,8 +146,8 @@ function MensajesES ()
             'Solo debes reforzar algunos conocimientos con tu plan formativo express.\n'+
             'Realiza estos cursos (MOOCs) antes del <b>'+this._getFechaLocale(fecha_revalida)+'</b>:\n')+
             participante.getPlanDeChoque().map(function(capability){return '#'+capability.getNombreMOOC()+': '+capability.getLinkMOOC()+'\n'}).join('')+ // '#Introducción a la Estadística: link'+ 
-            this._eliminarFormato( 'Además del MOOC, deberás <b>reforzar</b> tus conocimientos con el <b>libro recomendado</b> cuyo enlace y guia de lectura puedes ver en el fichero adjunto.\n'+
-            'Después <b>recibirás un nuevo test de conocimiento</b> para comprobar si has alcanzado el nivel necesario y así ser convocado al Programa.\n'+
+            this._eliminarFormato( 'También te adjuntamos una <b>guía del libro de estadística</b> que recomendamos y que seguro que te ayuda a potenciar tus capacidades analíticas.'+
+            'Si optas por reforzar dicho conocimiento a través de este libro, no sería necesario realizar el MOOC.\n'+ '</br>' +'Después <b>recibirás un nuevo test de conocimiento</b> para comprobar si has alcanzado el nivel necesario y así ser convocado al Programa.\n'+
             'En las próximas semanas un tutor pondría ponerse en contacto contigo para realizar una entrevista corta (10 min) para conocerte y verificar los resultados del test.\n')+
             this._eliminarFormato(this._getColetilla());      
     }
@@ -221,7 +222,7 @@ function MensajesES ()
 function MensajesEN ()
 {
     this._programa = (new ThisSheet()).getPrograma();    
-    this._getColetilla= function()    {        return '<b>Seize</b> <r>the opportunity!</r>\n';    }
+    this._getColetilla= function()    {        return '<b>Sieze</b> <r>the opportunity!</r>\n';    }
     this._eliminarFormato= function(text)    {        return text.replace(/<[^>]+>/g,'');    }
     this._getFechaLocale= function(fecha)    {        return dias_EN[fecha.getDay()]+' '+meses_EN[fecha.getMonth()]+' '+fecha.getDate()+'th';    }
     this.getAsuntoEmail= function()    {      return "BBVA Campus: "+this._programa.getNombre()+ " Program";    }

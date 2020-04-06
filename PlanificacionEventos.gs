@@ -34,7 +34,7 @@ function aplicarPlanificacion ()
       //creamos fechas de ejecucion que con respecto a la actual 
               var date_recordatorio_intermedio = new Date(SpreadsheetApp.getActive().getRange('PROP_FECHA_RECORDATORIO_INTERMEDIO').getValue()),
                   date_recordatorio_limite_test = new Date(SpreadsheetApp.getActive().getRange('PROP_FECHA_LIMITE_TEST').getValue()),
-                  date_resultados = new Date(SpreadsheetApp.getActive().getRange('PROP_FECHA_RESULTADOS').getValue()),
+                  //date_resultados = new Date(SpreadsheetApp.getActive().getRange('PROP_FECHA_RESULTADOS').getValue()),
                   date_lanzamiento_revalida = new Date(SpreadsheetApp.getActive().getRange('PROP_FECHA_LANZAMIENTO_REVALIDA').getValue()),
                   date_recordatorio_limite_revalida = new Date(SpreadsheetApp.getActive().getRange('PROP_FECHA_LIMITE_REVALIDA').getValue());
                   
@@ -42,8 +42,8 @@ function aplicarPlanificacion ()
                 throw 'La fecha indicada para lanzamiento de recordatorio intermedio no es válida.';
               if (isNaN(date_recordatorio_limite_test))
                 throw 'La fecha indicada para dia límite de contestación test inicial (lanzamiento recordatorio) no es válida.';
-              if (isNaN(date_resultados))
-                throw 'La fecha indicada para comunicación de resultados no es válida.';
+              //if (isNaN(date_resultados))
+              //  throw 'La fecha indicada para comunicación de resultados no es válida.';
               if (isNaN(date_lanzamiento_revalida))
                 throw 'La fecha indicada para lanzamiento revalida no es válida.';
               if (isNaN(date_recordatorio_limite_revalida))
